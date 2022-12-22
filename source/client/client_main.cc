@@ -400,6 +400,10 @@ int clientMain(int argc, char* argv[])
         QStringLiteral("port"),
         QString::number(DEFAULT_HOST_TCP_PORT));
 
+    QCommandLineOption name_option(QStringLiteral("name"),
+        QApplication::translate("Client", "Name of host."),
+        QStringLiteral("name"));
+
     QCommandLineOption username_option(QStringLiteral("username"),
         QApplication::translate("Client", "Name of user."),
         QStringLiteral("username"));
@@ -471,6 +475,7 @@ int clientMain(int argc, char* argv[])
     parser.addVersionOption();
     parser.addOption(address_option);
     parser.addOption(port_option);
+    parser.addOption(name_option);
     parser.addOption(username_option);
     parser.addOption(password_option);
     parser.addOption(session_type_option);
@@ -498,6 +503,7 @@ int clientMain(int argc, char* argv[])
 
         config.address_or_id = parser.value(address_option).toStdU16String();
         config.port = parser.value(port_option).toUShort();
+        config.computer_name = parser.value(name_option).toStdU16String();
         config.username = parser.value(username_option).toStdU16String();
         config.password = parser.value(password_option).toStdU16String();
 
