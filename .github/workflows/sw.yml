@@ -1,9 +1,6 @@
 name: sw
 
 on:
-  push:
-    paths:
-      - 'source/**'
   pull_request:
     paths:
       - 'source/**'
