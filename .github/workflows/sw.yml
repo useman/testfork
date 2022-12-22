@@ -1,9 +1,11 @@
 name: sw
 
-on:
-  pull_request:
+on: 
+  push:
     paths:
-      - 'source/**'
+    - 'source/**'
+    branches:
+    - master
 
 jobs:
   macos:
