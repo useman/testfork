@@ -500,7 +500,7 @@ int clientMain(int argc, char* argv[])
     {
         std::optional<proto::DesktopConfig> desktop_config;
         client::Config config;
-
+//test
         config.address_or_id = parser.value(address_option).toStdU16String();
         config.port = parser.value(port_option).toUShort();
         config.computer_name = parser.value(name_option).toStdU16String();
